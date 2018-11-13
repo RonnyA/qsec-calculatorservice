@@ -32,32 +32,6 @@ namespace qsec_calculatorservice.Controllers
             else
                 return StatusCode(500);
         }
-
-        [HttpPost]
-        [Route("Divide")]
-        public async Task<IActionResult> Divide([FromBody] CalcItem postModel)
-        {
-            if (postModel != null)
-            {
-                try
-                {
-                    double ret = postModel.x / postModel.y;
-                    
-                    return Ok(ret);
-                }
-                catch (DivideByZeroException)
-                {
-                    return StatusCode(400);
-                }
-                catch
-                {
-                    return StatusCode(500);
-                }
-                
-            }
-            else
-                return StatusCode(500);
-        }
     }
 
 

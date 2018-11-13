@@ -18,7 +18,7 @@ namespace qsec_calculatorservice.Controllers
         public async Task<IActionResult> Add([FromBody] CalcItem postModel)
         {
             if (postModel != null)
-                return Content(HtmlEncoder.Default.Encode($"{(int)(postModel.x + postModel.y)}"), "application/json");
+                return Ok(postModel.x + postModel.y);
             else
                 return StatusCode(500);
         }

@@ -23,9 +23,14 @@ namespace qsec_calculatorservice.Controllers
                 return StatusCode(500);
         }
 
-        public double Substract(double v1, double v2)
+        [HttpPost]
+        [Route("Substract")]
+        public async Task<IActionResult> Substract([FromBody] CalcItem postModel)
         {
-            return v1 - v2;
+            if (postModel != null)
+                return Ok(postModel.x - postModel.y);
+            else
+                return StatusCode(500);
         }
     }
 

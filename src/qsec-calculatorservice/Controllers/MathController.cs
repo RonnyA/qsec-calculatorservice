@@ -22,6 +22,11 @@ namespace qsec_calculatorservice.Controllers
             else
                 return StatusCode(500);
         }
+
+        public double Substract(double v1, double v2)
+        {
+            return v1 - v2;
+        }
     }
 
 

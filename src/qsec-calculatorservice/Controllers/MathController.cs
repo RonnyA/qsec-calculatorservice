@@ -32,6 +32,7 @@ namespace qsec_calculatorservice.Controllers
             else
                 return StatusCode(500);
         }
+
     }
 
 

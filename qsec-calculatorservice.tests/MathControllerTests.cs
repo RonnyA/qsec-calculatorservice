@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using qsec_calculatorservice.Controllers;
+using qsec_calculatorservice.Models;
 
 namespace qsec_calculatorservice.tests
 {
@@ -15,7 +16,8 @@ namespace qsec_calculatorservice.tests
         [TestMethod]
         public void Test_Substracting_Ints_Returns_Correct_Answer()
         {
-            var result = mathController.Substract(4, 2);
+            var item = new CalcItem() { x = 4, y = 2 };
+            var result = mathController.Substract(item);
             Assert.AreEqual(result, 2);
         }
 
@@ -23,7 +25,8 @@ namespace qsec_calculatorservice.tests
         [TestMethod]
         public void Test_Substracting_Decimal_Returns_Correct_Answer()
         {
-            var result = mathController.Substract(11.5,12.5);
+            var item = new CalcItem() { x = 11.5, y = 12.5 };
+            var result = mathController.Substract(item);
             Assert.AreEqual(result, -1);
         }
     }
